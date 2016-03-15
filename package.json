@@ -9,6 +9,8 @@
   "author": "z",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^3.3.4"
+    "bluebird": "^3.3.4",
+    "co": "^4.6.0",
+    "thunkify": "^2.1.2"
   }
 }
