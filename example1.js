@@ -3,7 +3,7 @@ var fs = require('fs');
 function run(generatorCreator) {
   var generator = generatorCreator();
   // This is the async loop pattern / continuation passing style
-  function next(err, returnValue) {
+  function next(err, data) {
     if (err) {
       return generator.throw(err);
     }
@@ -11,7 +11,7 @@ function run(generatorCreator) {
     //generator.send(returnValue);
     //var iterator = generator.next();
 
-    var iterator = generator.next(returnValue);
+    var iterator = generator.next(data);
     // remember, generator.next() always returns a iterator
     // iterator has 2 properties, done:boolean, value:any
     if (!iterator.done) {
@@ -33,7 +33,7 @@ function readFile(path) {
         //}
         next.apply(null, arguments);
       });
-    }, Math.random() * 5000 + 1000);
+    }, Math.random() * 500 + 200);
   };
 }
 

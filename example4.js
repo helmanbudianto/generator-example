@@ -15,7 +15,7 @@ function readFile(path) {
           resolve(data);
         }
       });
-    }, Math.random() * 5000 + 1000);
+    }, Math.random() * 500 + 200);
   });
 }
 
